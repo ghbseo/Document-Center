@@ -2,7 +2,11 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
-function QueryEdit() {
+interface QueryEditProps {
+    close: () => void;
+}
+
+function QueryEdit({ close }: QueryEditProps) {
     return <></>;
 }
 

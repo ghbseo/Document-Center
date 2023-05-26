@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { IconButton, Tooltip } from '@mui/material';
+import { IconButton, Tooltip, IconButtonProps } from '@mui/material';
 
-function ToolbarIcon({ title, children }: { title?: string; children: React.ReactNode }) {
+interface ToolbarIconProps extends IconButtonProps {
+    title?: string;
+}
+
+function ToolbarIcon({ title, onClick, children }: ToolbarIconProps) {
     return (
         <Tooltip
             title={title}
@@ -18,6 +22,7 @@ function ToolbarIcon({ title, children }: { title?: string; children: React.Reac
             }}
         >
             <IconButton
+                onClick={onClick}
                 css={css`
                     background-color: white;
                     height: 32px;

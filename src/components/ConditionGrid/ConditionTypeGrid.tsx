@@ -19,6 +19,10 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
+interface ConditionTypeGridProps {
+    open: () => void;
+}
+
 function makeColumn() {
     return (
         <TableRow>
@@ -32,7 +36,7 @@ function makeColumn() {
     );
 }
 
-function ConditionTypeGrid() {
+function ConditionTypeGrid({ open }: ConditionTypeGridProps) {
     return (
         <Box>
             <Box
@@ -75,8 +79,8 @@ function ConditionTypeGrid() {
                         Combo
                     </Button>
                 </Box>
-                <div>
-                    <ToolbarIcon title={'쿼리 편집'}>
+                <Box>
+                    <ToolbarIcon title={'쿼리 편집'} onClick={open}>
                         <EditOutlinedIcon />
                     </ToolbarIcon>
                     <ToolbarIcon title={'추가'}>
@@ -85,7 +89,7 @@ function ConditionTypeGrid() {
                     <ToolbarIcon title={'삭제'}>
                         <RemoveIcon />
                     </ToolbarIcon>
-                </div>
+                </Box>
             </Box>
             <Card>
                 <TableContainer
