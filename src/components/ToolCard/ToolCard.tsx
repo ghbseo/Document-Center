@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { Card, CardContent, CardActions, CardProps } from '@mui/material';
+import { Card, CardContent, CardActions, CardProps, Box } from '@mui/material';
 import { css } from '@emotion/react';
 import { SvgIconComponent } from '@mui/icons-material';
 
@@ -25,7 +25,7 @@ function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps) {
             {...rest}
         >
             <CardContent>
-                <div
+                <Box
                     css={css`
                         display: flex;
                         align-items: center;
@@ -38,8 +38,8 @@ function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps) {
                             font-size: 96px;
                         `}
                     />
-                </div>
-                <div
+                </Box>
+                <Box
                     css={css`
                         font-weight: 700;
                         font-size: 16px;
@@ -49,8 +49,8 @@ function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps) {
                     `}
                 >
                     {title}
-                </div>
-                <div
+                </Box>
+                <Box
                     css={css`
                         font-size: 14px;
                         color: #606060;
@@ -59,7 +59,7 @@ function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps) {
                     `}
                 >
                     {desc}
-                </div>
+                </Box>
             </CardContent>
             <CardActions></CardActions>
         </Card>

@@ -1,30 +1,13 @@
 /** @jsxImportSource @emotion/react */
+import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Box, Card } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux';
 import { TableVirtuoso, TableComponents } from 'react-virtuoso';
 import { css } from '@emotion/react';
+import ToolbarIcon from '@/components/ToolbarIcon/ToolbarIcon';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-
-function ToolbarIcon({ children }: { children: React.ReactNode }) {
-    return (
-        <IconButton
-            css={css`
-                background-color: white;
-                height: 32px;
-                border: 1px solid #e2e2e2;
-                box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
-                border-radius: 4px;
-                & + & {
-                    margin-left: 8px;
-                }
-            `}
-        >
-            {children}
-        </IconButton>
-    );
-}
 
 function ConditionGrid() {
     const conditionList = useSelector((state: RootState) => state.condition);
@@ -37,10 +20,10 @@ function ConditionGrid() {
                     justify-content: flex-end;
                 `}
             >
-                <ToolbarIcon>
+                <ToolbarIcon title={'추가'}>
                     <AddIcon />
                 </ToolbarIcon>
-                <ToolbarIcon>
+                <ToolbarIcon title={'삭제'}>
                     <RemoveIcon />
                 </ToolbarIcon>
             </Box>
@@ -51,7 +34,7 @@ function ConditionGrid() {
                         border: 1px solid white;
                         border-radius: 4px;
                         padding: 8px;
-                        height: 360px;
+                        min-height: 360px;
                     `}
                 >
                     <Table size="small">

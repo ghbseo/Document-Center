@@ -3,11 +3,12 @@ import { css } from '@emotion/react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux';
 import SidebarItemList from '@/layouts/side-nav-bar/SidebarItem';
+import { Box } from '@mui/material';
 
 function Sidebar() {
     const isMenuOpen = useSelector((state: RootState) => state.menu.isOpen);
     return (
-        <div
+        <Box
             css={css`
                 left: 0;
                 bottom: 0;
@@ -25,7 +26,7 @@ function Sidebar() {
             `}
         >
             <SidebarItemList />
-        </div>
+        </Box>
     );
 }
 

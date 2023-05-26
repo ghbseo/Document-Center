@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import routes from '@/routes';
 import Header from '@/layouts/header/Header';
 import Sidebar from '@/layouts/side-nav-bar/Sidebar';
 import { css } from '@emotion/react';
 
 function Content() {
-    const location = useLocation();
     return (
         <div
             css={css`
@@ -34,8 +33,7 @@ function Content() {
                         border-top: 1px solid #ebebeb;
                         border-left: 1px solid #ebebeb;
                         border-radius: 12px 0 0 0;
-                        padding: 0 56px;
-                        padding-top: 50px;
+                        padding: 50px 26px 26px 56px;
                     `}
                 >
                     <div
@@ -51,6 +49,8 @@ function Content() {
                     <div
                         css={css`
                             height: calc(100% - 70px);
+                            padding-right: 20px;
+                            overflow: auto;
                         `}
                     >
                         <Routes>

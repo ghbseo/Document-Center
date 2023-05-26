@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux';
+import { Divider, Box } from '@mui/material';
 
 export interface SidebarItemProps {
     Icon: SvgIconComponent;
@@ -20,7 +21,7 @@ function SidebarItem({ Icon, name, path, id }: SidebarItemProps) {
     const menuId = useSelector((state: RootState) => state.menu.id);
 
     return (
-        <div
+        <Box
             css={css`
                 display: flex;
                 align-items: center;
@@ -48,25 +49,36 @@ function SidebarItem({ Icon, name, path, id }: SidebarItemProps) {
                     width: 34px;
                 `}
             />
-            <div
+            <Box
                 css={css`
                     margin-left: 8px;
                     white-space: nowrap;
                 `}
             >
                 {name}
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }
 
 function SidebarItemList() {
     return (
-        <div>
-            {data.map((item) => (
-                <SidebarItem key={item.id} Icon={item.Icon} name={item.name} path={item.path} id={item.id} />
-            ))}
-        </div>
+        <React.Fragment>
+            {data.map((item, index) => {
+                return (
+                    <React.Fragment key={item.id}>
+                        <SidebarItem Icon={item.Icon} name={item.name} path={item.path} id={item.id} />
+                        {index === 0 && (
+                            <Divider
+                                css={css`
+                                    margin: 0 4px;
+                                `}
+                            />
+                        )}
+                    </React.Fragment>
+                );
+            })}
+        </React.Fragment>
     );
 }
 

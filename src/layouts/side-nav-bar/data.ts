@@ -11,7 +11,7 @@ export const data: SidebarItemProps[] = [
     },
     {
         name: '설정',
-        id: 2,
+        id: 3,
         path: '/setting',
         Icon: SettingsOutlinedIcon
     }

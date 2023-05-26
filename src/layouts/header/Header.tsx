@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useCallback } from 'react';
-import { IconButton } from '@mui/material';
+import { IconButton, Box } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { css } from '@emotion/react';
 import { useDispatch } from 'react-redux';
@@ -15,7 +15,7 @@ function Header() {
     }, []);
 
     return (
-        <div
+        <Box
             css={css`
                 display: flex;
                 align-items: center;
@@ -35,7 +35,7 @@ function Header() {
             >
                 <MenuRoundedIcon fontSize={'medium'} sx={{ color: 'black' }} />
             </IconButton>
-            <div
+            <Box
                 onClick={() => {
                     navigate('/');
                 }}
@@ -48,8 +48,8 @@ function Header() {
                 `}
             >
                 Document Center
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }
 

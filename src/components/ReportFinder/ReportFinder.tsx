@@ -46,13 +46,13 @@ function StyledTreeItem({ labelIcon, labelText, ...rest }: StyledTreeItemProps) 
                     `}
                 >
                     <Box component={labelIcon} color={'inherit'} />
-                    <div
+                    <Box
                         css={css`
                             white-space: nowrap;
                         `}
                     >
                         {labelText}
-                    </div>
+                    </Box>
                 </Box>
             }
         />
