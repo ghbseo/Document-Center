@@ -3,9 +3,9 @@ import React from 'react';
 import { css } from '@emotion/react';
 import { Grid } from '@mui/material';
 
-interface ToolGridTemplateProps {
+type ToolGridTemplateProps = {
     children: React.ReactNode;
-}
+};
 
 function ToolGrid({ children }: ToolGridTemplateProps) {
     return (

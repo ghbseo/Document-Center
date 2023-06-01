@@ -4,13 +4,13 @@ import { Card, CardContent, CardActions, CardProps, Box } from '@mui/material';
 import { css } from '@emotion/react';
 import { SvgIconComponent } from '@mui/icons-material';
 
-interface ToolCardProps extends CardProps {
+type ToolCardProps = {
     Icon: SvgIconComponent;
     title: string;
     desc: string;
-}
+};
 
-function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps) {
+function ToolCard({ Icon, title, desc, ...rest }: ToolCardProps & CardProps) {
     return (
         <Card
             css={css`

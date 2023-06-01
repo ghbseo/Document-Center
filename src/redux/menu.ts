@@ -1,11 +1,11 @@
-import { Menu } from '@/interfaces/menu.interface';
+import { Menu } from '@/types/menu';
 
 // define action types
 export const SELECT = 'menu/SELECT' as const;
 export const TOGGLE = 'menu/TOGGLE' as const;
 
 // define action creators
-export const select = (id: number) => ({
+export const select = (id: string) => ({
     type: SELECT,
     payload: id
 });
@@ -17,7 +17,7 @@ type Action = ReturnType<typeof select> | ReturnType<typeof toggle>;
 
 // define initial state
 const initialState: Menu = {
-    id: 1,
+    id: '1',
     isOpen: false
 };
 

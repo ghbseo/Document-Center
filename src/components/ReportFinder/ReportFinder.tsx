@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import { TreeView, TreeItem, TreeItemProps, TreeViewProps } from '@mui/lab';
-import { Report } from '@/interfaces/report.interface';
+import { Report } from '@/types/report';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux';
 import { SvgIconComponent } from '@mui/icons-material';
@@ -13,15 +13,15 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-interface StyledTreeItemProps extends TreeItemProps {
+type StyledTreeItemProps = {
     color?: string;
     labelText: string;
     labelIcon?: SvgIconComponent;
-}
+};
 
-interface IconMap {
+type IconMap = {
     [key: number]: SvgIconComponent;
-}
+};
 
 const iconMap: IconMap = {
     0: FolderOpenOutlinedIcon,
@@ -29,7 +29,7 @@ const iconMap: IconMap = {
     2: ArticleOutlinedIcon
 };
 
-function StyledTreeItem({ labelIcon, labelText, ...rest }: StyledTreeItemProps) {
+function StyledTreeItem({ labelIcon, labelText, ...rest }: StyledTreeItemProps & TreeItemProps) {
     return (
         <TreeItem
             css={css`

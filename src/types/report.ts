@@ -1,4 +1,4 @@
-export interface Report {
+export type Report = {
     id: number;
     pid: number;
     type: number;

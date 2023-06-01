@@ -1,4 +1,4 @@
-import { Report } from '@/interfaces/report.interface';
+import { Report } from '@/types/report';
 
 // define action types
 export const ADD = 'report/ADD' as const;

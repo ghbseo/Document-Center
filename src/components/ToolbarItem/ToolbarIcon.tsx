@@ -2,11 +2,11 @@
 import { css } from '@emotion/react';
 import { IconButton, Tooltip, IconButtonProps } from '@mui/material';
 
-interface ToolbarIconProps extends IconButtonProps {
+type ToolbarIconProps = {
     title?: string;
-}
+};
 
-function ToolbarIcon({ title, onClick, children }: ToolbarIconProps) {
+function ToolbarIcon({ title, onClick, children }: ToolbarIconProps & IconButtonProps) {
     return (
         <Tooltip
             title={title}

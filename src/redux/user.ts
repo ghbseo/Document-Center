@@ -1,4 +1,4 @@
-import { User } from '@/interfaces/user.interface';
+import { User } from '@/types/user';
 
 // define action types
 export const LOG_IN = 'user/LOG_IN' as const;

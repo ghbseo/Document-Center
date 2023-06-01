@@ -1,4 +1,4 @@
-import { MainPage, ReportViewPage, ReportConditionPage, REportManagePage } from '@/pages';
+import { MainPage, ReportViewPage, ReportConditionPage, ReportManagePage, ReportPage } from '@/pages';
 
 const routes = [
     {
@@ -7,6 +7,10 @@ const routes = [
     },
     {
         path: '/report',
+        element: ReportPage
+    },
+    {
+        path: '/report/finder',
         element: ReportViewPage
     },
     {
@@ -15,7 +19,7 @@ const routes = [
     },
     {
         path: '/report/manage',
-        element: REportManagePage
+        element: ReportManagePage
     }
 ];
 

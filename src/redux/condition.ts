@@ -1,4 +1,4 @@
-import { Condition } from '@/interfaces/condition.interface';
+import { Condition } from '@/types/condition';
 
 // define action types
 export const ADD = 'condition/ADD' as const;

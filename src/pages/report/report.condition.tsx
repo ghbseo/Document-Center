@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState, useCallback } from 'react';
-import { Stack, Fade, Modal } from '@mui/material';
+import { Stack, Modal } from '@mui/material';
 import ConditionGrid from '@/components/ConditionGrid/ConditionGrid';
 import ConditionTypeGrid from '@/components/ConditionGrid/ConditionTypeGrid';
-import QueryEdit from '@/components/ConditionGrid/QueryEdit';
+import QueryEdit from '@/components/QueryEdit/QueryEdit';
 
 function ReportCondition() {
     const [open, setOpen] = useState(false);
@@ -23,9 +23,7 @@ function ReportCondition() {
                 <ConditionTypeGrid open={handleOpen} />
             </Stack>
             <Modal open={open} onClose={close}>
-                <Fade in={open}>
-                    <QueryEdit close={handleClose} />
-                </Fade>
+                <QueryEdit close={handleClose} />
             </Modal>
         </React.Fragment>
     );

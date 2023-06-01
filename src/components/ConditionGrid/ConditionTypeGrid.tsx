@@ -9,19 +9,19 @@ import {
     TableRow,
     IconButton,
     Box,
-    Card,
+    Paper,
     Button
 } from '@mui/material';
 import { css } from '@emotion/react';
-import ToolbarIcon from '@/components/ToolbarIcon/ToolbarIcon';
+import ToolbarIcon from '@/components/ToolbarItem/ToolbarIcon';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
-interface ConditionTypeGridProps {
+type ConditionTypeGridProps = {
     open: () => void;
-}
+};
 
 function makeColumn() {
     return (
@@ -91,22 +91,19 @@ function ConditionTypeGrid({ open }: ConditionTypeGridProps) {
                     </ToolbarIcon>
                 </Box>
             </Box>
-            <Card>
-                <TableContainer
-                    css={css`
-                        background-color: white;
-                        border: 1px solid white;
-                        border-radius: 4px;
-                        padding: 8px;
-                        min-height: 360px;
-                    `}
-                >
-                    <Table size="small">
-                        <TableHead>{makeColumn()}</TableHead>
-                        <TableBody></TableBody>
-                    </Table>
-                </TableContainer>
-            </Card>
+
+            <TableContainer
+                component={Paper}
+                css={css`
+                    padding: 8px;
+                    min-height: 360px;
+                `}
+            >
+                <Table size="small" stickyHeader>
+                    <TableHead>{makeColumn()}</TableHead>
+                    <TableBody></TableBody>
+                </Table>
+            </TableContainer>
         </Box>
     );
 }

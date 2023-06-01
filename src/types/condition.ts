@@ -1,4 +1,4 @@
-export interface Condition {
+export type Condition =  {
     id: number;
     name: string;
     type: 'Combo' | 'DateFromTo' | 'Text' | 'Radio' | 'Checkbox' | 'TreeListCombo' | 'Date' | 'CheckCombo';
