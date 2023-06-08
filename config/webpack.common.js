@@ -12,7 +12,11 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|eot|ttf|otf)$/i,
+                test: /\.(png|jpg|jpeg|gif|svg|ico)$/i,
+                use: 'file-loader'
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 use: 'file-loader'
             }
         ]

@@ -1,6 +1,4 @@
-export { default as LoginPage } from './login/login';
-export { default as MainPage } from './main/main';
-export { default as ReportViewPage } from './report/report.view';
-export { default as ReportConditionPage } from './report/report.condition';
-export { default as ReportManagePage } from './report/report.manage';
-export { default as ReportPage } from './report/report';
+export { default as MainPage } from '@/pages/main/main';
+export { default as ReportPage } from '@/pages/report/report';
+export { default as ReportFinderPage } from '@/pages/report/report.finder';
+export { default as ReportConditionPage } from '@/pages/report/report.condition';

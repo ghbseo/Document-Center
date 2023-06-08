@@ -14,15 +14,15 @@ module.exports = merge(common, {
         filename: 'main.js',
         path: path.resolve(__dirname, '../dist'),
         publicPath: './',
-        clean: true,
+        clean: true
     },
     module: {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            },
-        ],
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
+            }
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin(),
@@ -30,8 +30,8 @@ module.exports = merge(common, {
             analyzerMode: 'static',
             openAnalyzer: false,
             generateStatsFile: true,
-            statsFilename: 'bundle-report.json',
-        }),
+            statsFilename: 'bundle-report.json'
+        })
     ],
     optimization: {
         usedExports: true,
@@ -40,16 +40,16 @@ module.exports = merge(common, {
             new TerserPlugin({
                 terserOptions: {
                     compress: {
-                        drop_console: true,
-                    },
-                },
+                        drop_console: true
+                    }
+                }
             }),
-            new CssMinimizerPlugin(),
-        ],
+            new CssMinimizerPlugin()
+        ]
     },
     performance: {
         hints: false,
         maxEntrypointSize: 512000,
-        maxAssetSize: 512000,
-    },
+        maxAssetSize: 512000
+    }
 });

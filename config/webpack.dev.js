@@ -10,19 +10,24 @@ module.exports = merge(common, {
         compress: true,
         port: 8081,
         historyApiFallback: true,
-        liveReload: true,
+        liveReload: true
     },
     output: {
         filename: 'main.js',
-        publicPath: '/',
+        publicPath: '/'
     },
     module: {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     },
-    target: 'web',
+    resolve: {
+        alias: {
+            inferno: 'inferno/dist/index.dev.esm.js'
+        }
+    },
+    target: 'web'
 });

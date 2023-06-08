@@ -1,4 +1,4 @@
-import { MainPage, ReportViewPage, ReportConditionPage, ReportManagePage, ReportPage } from '@/pages';
+import { MainPage, ReportPage, ReportFinderPage, ReportConditionPage } from '@/pages';
 
 const routes = [
     {
@@ -11,15 +11,11 @@ const routes = [
     },
     {
         path: '/report/finder',
-        element: ReportViewPage
+        element: ReportFinderPage
     },
     {
         path: '/report/condition',
         element: ReportConditionPage
-    },
-    {
-        path: '/report/manage',
-        element: ReportManagePage
     }
 ];
 
